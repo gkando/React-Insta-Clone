@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import './PostContainer.css';
 import CommentSection from '../CommentSection/CommentSection'
 import Post from './Post'
+import { Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button } from 'reactstrap';
 
 
 const PostContainer = props => {
@@ -11,10 +13,10 @@ const PostContainer = props => {
             
             {props.dummyData.map(post => {
                 return (
-                    <div className='post-container'>
+                    <Card className='post-container'>
                         <Post key={post.id} post={post} />
                         <CommentSection key={post.id} post={post} />
-                    </div>
+                    </Card>
                     );
             })}
         </div>

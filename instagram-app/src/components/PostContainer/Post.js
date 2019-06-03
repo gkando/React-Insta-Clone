@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import './Post.css';
-
+import { Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, CardHeader } from 'reactstrap';
 
 const Post = props => {
  
     return (
         <div className='post'>
-            <div className='post-header'>
+            <CardHeader className='post-header'>
                 <img className='thumb-img' src={props.post.thumbnailUrl} />
-                <div className='header-user'>{props.post.username}</div>
-            </div>
+                <CardTitle className='header-user'>{props.post.username}</CardTitle>
+            </CardHeader>
             <div className='post-body-wrapper'>
-                <img className='post-img' src={props.post.imageUrl} />
-                <span className='post-likes'>{props.post.likes} likes</span>
+                <CardImg className='post-img' src={props.post.imageUrl} />
+                <span className='post-likes text-left'>{props.post.likes} likes</span>
             </div>
         </div>
     )

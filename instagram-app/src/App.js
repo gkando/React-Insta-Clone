@@ -4,6 +4,7 @@ import CommentSection from './components/CommentSection/CommentSection'
 import PostContainer from './components/PostContainer/PostContainer'
 import SearchBar from './components/SearchBar/SearchBar'
 import dummyData from './dummy-data';
+import { Button } from 'reactstrap';
 
 class App extends Component {
   constructor() {
@@ -16,6 +17,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
+
           <SearchBar />
           <PostContainer dummyData={this.state.dummyData}/>
       </div>

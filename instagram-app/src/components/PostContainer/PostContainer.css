@@ -13,9 +13,7 @@
     flex-wrap: wrap;
     background: #fff;
     border-radius: 2px;
-    width: 400px;
     padding: 1rem;
-    width: 50vw;
     border: 1px lightgray solid;
     margin-bottom: 12px;
 }
@@ -30,7 +28,12 @@
     justify-content: flex-start;
     align-items: center;
     margin-bottom: 1rem;
+    
 }
+.card-header {
+    background-color: rgba(0,0,0,0) !important;
+}
+    
 
 .thumb-img {
     width: 2rem;
