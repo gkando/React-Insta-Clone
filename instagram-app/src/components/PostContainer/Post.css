@@ -1,0 +1,13 @@
+.post-btn-group {
+    width: 6vw;
+    margin: 8px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.post-btn-group a, :hover {
+    text-decoration: none;
+    color: #262626;
+}
+
+

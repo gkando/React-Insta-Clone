@@ -1,24 +1,34 @@
 import React, { Component }  from 'react';
 import './App.css';
-import CommentSection from './components/CommentSection/CommentSection'
-import PostContainer from './components/PostContainer/PostContainer'
+import './components/SearchBar/SearchBar.css';
 import SearchBar from './components/SearchBar/SearchBar'
+import PostContainer from './components/PostContainer/PostContainer'
 import dummyData from './dummy-data';
-import { Button } from 'reactstrap';
+const fs = require('fs');
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      dummyData: dummyData
+      dummyData: []
     };
+  }
+  componentDidMount() {
+    this.setState({ dummyData: dummyData });
   }
 
   render() {
     return (
       <div className='App'>
-
-          <SearchBar />
+        <div className='search-bar'>
+            <div className='logo-area'>
+                <div className='logo'>  </div>
+                <div className='divider'></div>
+                <div className='logo2' aria-label='Instagram'></div>
+            </div>
+            <SearchBar dummyData={this.state.dummyData}/>
+        </div>
+          
           <PostContainer dummyData={this.state.dummyData}/>
       </div>
     );
