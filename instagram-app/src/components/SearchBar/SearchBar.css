@@ -1,0 +1,87 @@
+.search-bar {
+    display: flex;
+    margin-top: 7px;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0,0,0,.0975);
+    /* position: fixed; */
+    top: 0;
+    width: 100%;
+    height: 77px;
+    justify-content: center;
+    margin-top: 10px;
+}
+.logo-area{
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+.logo{
+
+    background-image: url(../../ig_bundle.png);
+    background-size: 312px 298px;
+    background-position: -50px -199px;
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+    
+}
+
+
+.logo2{
+    background-image: url(../../ig_bundle.png);
+    background-size: 312px 298px;
+    background-position: -92px -71px;
+    background-repeat: no-repeat;
+    height: 29px;
+    width: 103px;
+    margin-right: 15px;
+}
+
+.divider{
+    background-color: #262626;
+    height: 28px;
+    margin: 0 16px;
+    width: 1px;
+}
+
+.search-input {
+    border: solid 1px #dbdbdb;
+    background-color: #fafafa;
+    border-radius: 3px;
+    color: #262626;
+    text-align: center;
+
+}
+
+.search-input:focus {
+    background-color: #fff;
+  }
+
+.coreSpriteSearchIcon{
+    background-color: white;
+    background-image: url('../../ig_bundle.png');
+    background-size: 410px 396px;
+    background-position: -99px -366px;
+    /* background-size: 300px 362px;
+    background-position: -69px -330px; */
+    background-repeat: no-repeat;
+    display: block;
+    height: 36px;
+    width: 28px;
+    /* padding-left: 40px; */
+    z-index: 2;
+
+
+}
+
+.search-container{
+    margin-top: 10px;
+    height: 28px;
+    width: 31vw;
+    margin-right: 50px;
+    margin-left: 50px;
+
+
+}
