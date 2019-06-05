@@ -3,20 +3,29 @@ import './SearchBar.css';
 
 
 const SearchBar = props => {
-    return (
-        <div className='search-bar'>
-            <div className='logo-area'>
-                <div className='logo'>  </div>
-                <div className='divider'></div>
-                <div className='logo2' aria-label='Instagram'></div>
-            </div>
+    // const [searchTerm, setSearchTerm] = useState('');
 
-            <div className='search-container'>
-                {/* <span className='coreSpriteSearchIcon'></span> */}
-                <input className='search-input' placeholder="Search"></input>
-                
-            </div>
+    // const handleSearch = e => {
+    //     e.preventDefault();
+
+    //     setSearchTerm(e.target.value)
+
+    //     // console.log(searchTerm)
+
+    //     if (searchTerm.length > 2) {
+    //         getMatchedItems()
+    //     }
+        
+    //   };
+
+    
+    return (
+        <div className='search-container'>
+            {/* <span className='coreSpriteSearchIcon'></span> */}
+            <input className='search-input' placeholder="Search" onKeyDown={props.searchPosts}></input>
+            
         </div>
+
     )
 }
 

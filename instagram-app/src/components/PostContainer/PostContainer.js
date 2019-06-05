@@ -3,19 +3,20 @@ import PropTypes from "prop-types";
 import './PostContainer.css';
 import CommentSection from '../CommentSection/CommentSection'
 import Post from './Post'
-import { Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Card } from 'reactstrap';
+
 
 
 const PostContainer = props => {
+
     return (
         <div className='posts-list'>
             
-            {props.dummyData.map(post => {
+            {props.posts.map((post, index) => {
                 return (
-                    <Card className='post-container'>
-                        <Post key={post.id} post={post} />
-                        <CommentSection key={post.id} post={post} />
+                    <Card key={index} className='post-container'>
+                        <Post key={index} post={post} />
+                        <CommentSection key={index} post={post} />
                     </Card>
                     );
             })}
@@ -24,7 +25,7 @@ const PostContainer = props => {
 }
 
 PostContainer.propTypes = {
-    dummyData: PropTypes.arrayOf(PropTypes.object).isRequired
+    posts: PropTypes.arrayOf(PropTypes.object).isRequired
   };
 
 export default PostContainer

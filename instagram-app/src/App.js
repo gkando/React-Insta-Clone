@@ -1,28 +1,55 @@
-import React, { Component }  from 'react';
+import React, { useState, useEffect }  from 'react';
+// import axios from 'axios';
 import './App.css';
-import CommentSection from './components/CommentSection/CommentSection'
-import PostContainer from './components/PostContainer/PostContainer'
+import './components/SearchBar/SearchBar.css';
 import SearchBar from './components/SearchBar/SearchBar'
+import PostContainer from './components/PostContainer/PostContainer'
 import dummyData from './dummy-data';
-import { Button } from 'reactstrap';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      dummyData: dummyData
-    };
-  }
 
-  render() {
+
+
+function App() {
+  const [posts, setPosts] = useState([])
+  const [filteredPosts, setFilteredPosts] = useState([]);
+
+  useEffect(() => {
+    setPosts(dummyData);
+  }, [posts])
+  
+  const handleSearchPosts = e => {
+    const postsTmp = posts.filter(p => {
+      if (p.username.includes(e.target.value)) {
+        return p;
+      }
+    });
+    setFilteredPosts(postsTmp)
+  };
+
     return (
       <div className='App'>
+        <div className='search-bar'>
+            <div className='logo-area'>
+                <div className='logo'>  </div>
+                <div className='divider'></div>
+                <div className='logo2' aria-label='Instagram'></div>
+            </div>
+            <SearchBar
+              searchPosts={handleSearchPosts}
+            />
+        </div>
+          
+          <PostContainer 
+              posts={
+                filteredPosts.length > 0
+                ? filteredPosts
+                : posts
+          }/>
 
-          <SearchBar />
-          <PostContainer dummyData={this.state.dummyData}/>
+          
       </div>
     );
-  }
+  
 }
 
 export default App;
