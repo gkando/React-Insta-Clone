@@ -15,8 +15,8 @@ const PostContainer = props => {
             {props.posts.map((post, index) => {
                 return (
                     <Card key={index} className='post-container'>
-                        <Post key={index} post={post} />
-                        <CommentSection key={index} post={post} />
+                        <Post post={post} />
+                        <CommentSection post={post} />
                     </Card>
                     );
             })}

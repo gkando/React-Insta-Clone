@@ -1,29 +1,24 @@
 import React from 'react';
 import './SearchBar.css';
+import Login from '../Login/Login'
 
 
 const SearchBar = props => {
-    // const [searchTerm, setSearchTerm] = useState('');
-
-    // const handleSearch = e => {
-    //     e.preventDefault();
-
-    //     setSearchTerm(e.target.value)
-
-    //     // console.log(searchTerm)
-
-    //     if (searchTerm.length > 2) {
-    //         getMatchedItems()
-    //     }
-        
-    //   };
 
     
     return (
-        <div className='search-container'>
-            {/* <span className='coreSpriteSearchIcon'></span> */}
-            <input className='search-input' placeholder="Search" onKeyDown={props.searchPosts}></input>
-            
+        <div className='search-bar'>
+                <div className='search-bar-container'>
+                <div className='logo-area'>
+                    <div className='logo'>  </div>
+                    <div className='divider'></div>
+                    <div className='logo2' aria-label='Instagram'></div>
+                </div>
+                <div className='search-container'>
+                    <input className='search-input' placeholder="Search" onKeyDown={props.searchPosts}></input>
+                </div>
+                <Login />
+            </div>
         </div>
 
     )
