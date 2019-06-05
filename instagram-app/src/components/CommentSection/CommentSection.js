@@ -7,7 +7,10 @@ import './CommentSection.css';
 
 const CommentSection = props => {
     const [commentNew, setCommentNew] = useState('')
+    
     const [commentsData, setCommentsData] = useState(props.post.comments)
+    
+
 
      const handleComment = e => {
         e.preventDefault();
@@ -19,7 +22,7 @@ const CommentSection = props => {
         const comments = commentsData.slice();
         comments.push(newComment)
         setCommentsData(comments);
-        localStorage.setItem('myValueInLocalStorage', JSON.stringify(commentsData));
+        
         setCommentNew('')
       };
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import './Post.css';
-import { CardImg, CardTitle, CardHeader, Button } from 'reactstrap';
+import { CardImg, CardTitle, CardHeader } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faComment } from '@fortawesome/free-regular-svg-icons'
 

@@ -8,10 +8,11 @@ import { Card } from 'reactstrap';
 
 
 const PostContainer = props => {
+
     return (
         <div className='posts-list'>
             
-            {props.dummyData.map((post, index) => {
+            {props.posts.map((post, index) => {
                 return (
                     <Card key={index} className='post-container'>
                         <Post key={index} post={post} />
@@ -24,7 +25,7 @@ const PostContainer = props => {
 }
 
 PostContainer.propTypes = {
-    dummyData: PropTypes.arrayOf(PropTypes.object).isRequired
+    posts: PropTypes.arrayOf(PropTypes.object).isRequired
   };
 
 export default PostContainer
