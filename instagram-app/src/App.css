@@ -4,9 +4,12 @@ html {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #fafafa !important;
 }
 
 .App{
   display: flex;
   flex-flow: column wrap;
+  /* align-content: center; */
+  background-color: #fafafa;
 }

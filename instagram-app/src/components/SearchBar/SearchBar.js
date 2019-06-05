@@ -1,6 +1,6 @@
 import React from 'react';
 import './SearchBar.css';
-import Login from '../Login/Login'
+
 
 
 const SearchBar = props => {
@@ -17,7 +17,7 @@ const SearchBar = props => {
                 <div className='search-container'>
                     <input className='search-input' placeholder="Search" onKeyDown={props.searchPosts}></input>
                 </div>
-                <Login />
+                
             </div>
         </div>
 

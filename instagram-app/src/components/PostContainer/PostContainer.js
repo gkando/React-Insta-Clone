@@ -5,13 +5,10 @@ import CommentSection from '../CommentSection/CommentSection'
 import Post from './Post'
 import { Card } from 'reactstrap';
 
-
-
 const PostContainer = props => {
 
     return (
         <div className='posts-list'>
-            
             {props.posts.map((post, index) => {
                 return (
                     <Card key={index} className='post-container'>

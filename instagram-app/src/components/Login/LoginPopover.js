@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Button, Popover, PopoverHeader, PopoverBody, Form, FormGroup, Label, Input } from 'reactstrap';
 import './Login.css'
-import { Button, Card, CardText, CardTitle, Form, FormGroup, Label, Input } from 'reactstrap';
 
-const Login = () => {
+const LoginPopover = () => {
+    const [popoverOpen, setPopoverOpen] = useState(false)
     const [username, setUsername] = useState(localStorage.getItem('user_name') || '');
 
     const handleUser = e => {
@@ -27,26 +28,35 @@ const Login = () => {
         return () => console.log('unmounting...');
     })
 
+
+    const toggle = () => {setPopoverOpen(!popoverOpen)}
+
     return (
-
-
-            <Card id='login-container' body>
-                <CardTitle id='logo-card'><div className='logo2' aria-label='Instagram'></div></CardTitle>
-                    <Form id='login-form' onSubmit={handleSubmit}>
+        <div>
+            
+            <Button id="Popover1" type="button" color="primary" size="sm">
+                Log In
+            </Button>
+            <Popover placement="bottom" isOpen={popoverOpen} target="Popover1" toggle={toggle}>
+                <PopoverHeader>Login to IG Clone</PopoverHeader>
+                <PopoverBody>
+                    <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label for="inputUsername" hidden>Username</Label>
-                            <Input type="text" bsSize="sm" name="username" id="inputUsername" placeholder="Username" onChange={handleUser}/>
+                            <Input type="username" bsSize="sm" name="username" id="inputUsername" placeholder="Username" onChange={handleUser}/>
                         </FormGroup>
+
                         <FormGroup>
                             <Label for="inputPassword" hidden>Password</Label>
                             <Input type="password" bsSize="sm" name="password" id="inputPassword" placeholder="Password" />
                         </FormGroup>
-                        <button id='login-btn' disabled={!username}>Log in </button>
+                        <Button type='submit'>Sign in</Button>
                     </Form>
-            </Card>
-
+                </PopoverBody>
+            </Popover>
+      </div>
     )
   
 }
 
-export default Login;
+export default LoginPopover;

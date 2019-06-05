@@ -2,11 +2,12 @@ import React from 'react';
 import './App.css';
 import withAuthenticate from './components/Authentication/withAuthenticate';
 import PostsPage from './components/PostContainer/PostsPage'
+import Login from './components/Login/Login'
 
 function App() {
 
-    const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)
-
+    const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login)
+  console.log('tst')
     return (
       <div className='App'>
         <ComponentFromWithAuthenticate />

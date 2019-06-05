@@ -1,16 +1,24 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
-// const withAuthenticate = () =>
-//        {return ( <h1>HOC</h1> )}
-
-// export default withAuthenticate;
-
-
-
-const withAuthenticate = PostsPage =>
+const withAuthenticate = PostsPage => LoginPage =>
   class extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        loggedIn: false
+      };
+    }
+    componentDidMount() {
+      if (!localStorage.getItem('user_name')) {
+        this.setState({ loggedIn: false });
+      } else {
+        this.setState({ loggedIn: true });
+      }
+    }
     render() {
-        return <PostsPage />;
+      if (this.state.loggedIn) return <PostsPage />;
+      return <LoginPage />;
     }
   };
-  export default withAuthenticate;
+
+export default withAuthenticate;
