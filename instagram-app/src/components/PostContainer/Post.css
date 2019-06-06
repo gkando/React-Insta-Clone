@@ -5,7 +5,7 @@
     justify-content: space-evenly;
 }
 
-.post-btn-group a, :hover {
+.post-btn-group button, .post-btn-group button:hover {
     text-decoration: none;
     color: #262626;
 }

@@ -1,3 +1,9 @@
+.Posts-Page{
+    display: flex;
+    flex-flow: column wrap;
+
+  }
+
 .posts-list {
     display: flex;
     flex-flow: column wrap;
@@ -5,6 +11,7 @@
     background: #fff;
     border-radius: 2px;
     margin: 10px;
+    padding-top: 75px;
     
 }
 
@@ -34,17 +41,6 @@
     background-color: rgba(0,0,0,0) !important;
 }
     
-
-.thumb-img {
-    width: 2rem;
-    border-radius: 50%;
-}
-
-.header-user{
-    font-weight: bold;
-    margin-left: 1rem;
-}
-
 .post-likes {
     color: #262626;
     font-weight: 600;

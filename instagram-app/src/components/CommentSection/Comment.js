@@ -1,15 +1,16 @@
 import React from 'react';
 import './CommentSection.css';
+import {UserThumbnail, UserName} from '../Styles/Reusables';
 
 const Comment = props => {
     return (
         <>
             <div key={props.index} className='comment-wrapper'>
-                <div className='comment-user' key={props.index}>
-                    <a href={`https://www.instagram.com/${props.comment.username}`}> 
+                {/* <div className='comment-user' key={props.index}> */}
+                    <UserName href={`https://www.instagram.com/${props.comment.username}`}> 
                         {props.comment.username}  
-                    </a>
-                </div>
+                    </UserName>
+                {/* </div> */}
                 <span className='comment-text'>
                     {props.comment.text}
                 </span>
