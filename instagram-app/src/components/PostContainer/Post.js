@@ -4,8 +4,7 @@ import './Post.css';
 import { CardImg, CardTitle, CardHeader, Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faComment } from '@fortawesome/free-regular-svg-icons'
-
-
+import {UserThumbnail, UserName} from '../Styles/Reusables';
 
 const Post = props => {
     const [likes, setLikes] = useState(props.post.likes);
@@ -18,8 +17,8 @@ const Post = props => {
     return (
         <div className='post'>
             <CardHeader className='post-header'>
-                <img className='thumb-img' alt='thumb-img' src={props.post.thumbnailUrl} />
-                <CardTitle className='header-user'>{props.post.username}</CardTitle>
+                <UserThumbnail alt='thumb-img' src={props.post.thumbnailUrl} />
+                <UserName href={`https://www.instagram.com/${props.post.username}`}>{props.post.username}</UserName>
             </CardHeader>
             <div className='post-body-wrapper'>
                 <CardImg className='post-img' src={props.post.imageUrl} />
@@ -48,6 +47,6 @@ Post.propTypes = {
         timestamp: PropTypes.string,
         comments: PropTypes.arrayOf(PropTypes.object)
     })
-  };
+};
 
 export default Post

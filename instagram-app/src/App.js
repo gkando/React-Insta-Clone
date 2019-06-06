@@ -7,7 +7,7 @@ import Login from './components/Login/Login'
 function App() {
 
     const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)(Login)
-  console.log('tst')
+
     return (
       <div className='App'>
         <ComponentFromWithAuthenticate />
